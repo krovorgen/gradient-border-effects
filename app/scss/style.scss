@@ -2,5 +2,54 @@
 @import "libs/reset";
 
 /* @import url("https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/12.0.1/sanitize.min.css"); */
-/* @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"); */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+
 /* @import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"); */
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.box {
+    position: relative;
+    border-radius: 20px;
+    width: 450px;
+    height: 450px;
+    background-color: #fff;
+}
+
+.box::after,
+.box::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #f00, #00f0f0, #0f0, #00f, #f00, #00f0f0, #0f0, #00f, #f00f0f);
+    background-size: 500%;
+    transform: scale(1.02);
+    animation: animation 20s linear infinite;
+}
+
+.box::after {
+    filter: blur(20px);
+}
+
+@keyframes animation {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 300% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
